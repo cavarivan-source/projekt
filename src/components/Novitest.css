@@ -1,0 +1,11 @@
+.newtest {
+    color:blue;
+    font-size: 2rem;
+}
+
+.oldtest {
+    color:green;
+    font-weight: bold;
+    text-decoration: line-through;
+    
+}
