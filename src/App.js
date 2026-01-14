@@ -1,12 +1,12 @@
-import Test from './components/Test';
-import Novitest from './components/Novitest';
+
 import './App.css';
+import Home from './pages/Home';
 
 function App() {
   return (
 <>
-<Test/>
-<Novitest/>
+
+<Home/>
 <h2>Drugi naslov</h2>
 
 
