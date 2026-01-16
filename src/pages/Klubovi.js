@@ -2,7 +2,7 @@
 
 const Klubovi = () => {
   return (
-    <div>Klubovi</div>
+    <div>Klubovicxcxy</div>
   )
 }
 
