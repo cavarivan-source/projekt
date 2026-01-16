@@ -131,7 +131,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-10">
-            <h1>Najčćešće postavljana pitanja</h1>
+            <h1>Najčešće postavljana pitanja</h1>
           </div>
         </div>
       </div>
