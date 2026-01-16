@@ -1,11 +1,10 @@
 
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
+
 
 const Home = () => {
   return (
     <>
-   <Nav />
+  
 
     <section className="hero d-flex align-items-center text-white mb-5">
       <div className="container">
@@ -156,7 +155,6 @@ const Home = () => {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   
-  <Footer />
 
     </>
   )

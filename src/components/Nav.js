@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const Nav =() => {
     return (
         <>
@@ -18,40 +18,17 @@ const Nav =() => {
           
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             
-         <li className="nav-item dropdown text-end">
-              <a className="nav-link dropdown-toggle" href="#" id="ddElectric" role="button" data-bs-toggle="dropdown" aria-expanded="false">ELECTRIC</a>
-              <ul className="dropdown-menu" aria-labelledby="ddElectric">
-                <li><a className="dropdown-item text-end" href="#">Electric Ace</a></li>
-                <li><a className="dropdown-item text-end" href="#">Electric Ivy</a></li>
-              </ul>
+               <li className="nav-item">
+              <Link className="nav-link text-end" to="/klubovi">Klubovi</Link>
             </li>
-          <li className="nav-item dropdown text-end">
-              <a className="nav-link dropdown-toggle" href="#" id="ddElectric" role="button" data-bs-toggle="dropdown" aria-expanded="false">CITY</a>
-              <ul className="dropdown-menu" aria-labelledby="ddElectric">
-                <li><a className="dropdown-item text-end" href="#">Caféracer</a></li>
-                <li><a className="dropdown-item text-end" href="#">Robyn</a></li>
-              </ul>
+
+                 <li className="nav-item">
+              <Link className="nav-link text-end" to="/natjecanja">Natjecanja</Link>
             </li>
-           <li className="nav-item dropdown text-end">
-              <a className="nav-link dropdown-toggle" href="#" id="ddElectric" role="button" data-bs-toggle="dropdown" aria-expanded="false">KIDS</a>
-              <ul className="dropdown-menu" aria-labelledby="ddElectric">
-                <li><a className="dropdown-item text-end" href="#">El Bear</a></li>
-                <li><a className="dropdown-item text-end" href="#">El Robin</a></li>
-              </ul>
+                  <li className="nav-item">
+              <Link className="nav-link text-end" to="/povijest">Povijest</Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link text-end" href="#">ACCESSORIES</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-end" href="#">STORES</a>
-            </li>
-           <li className="nav-item dropdown text-end">
-              <a className="nav-link dropdown-toggle" href="#" id="ddElectric" role="button" data-bs-toggle="dropdown" aria-expanded="false">LEASING</a>
-              <ul className="dropdown-menu" aria-labelledby="ddElectric">
-                <li><a className="dropdown-item text-end" href="#">Private</a></li>
-                <li><a className="dropdown-item text-end" href="#">Business</a></li>
-              </ul>
-            </li>
+           
           </ul>
 
     <ul className="navbar-nav ms-auto align-items-center">
