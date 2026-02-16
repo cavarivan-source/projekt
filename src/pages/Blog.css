@@ -1,0 +1,16 @@
+.blog-post img{
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    width: 100%;
+}
+.blog-post h2{
+    font-size: 2rem;
+}
+.blog-page{
+    min-height: calc(100vh - 53px);
+}
+@media(min-width: 440px){
+    .blog-post img {
+      aspect-ratio: 16/9;  
+    }
+}

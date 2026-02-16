@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+:root {
+  --primary-color: #141615;
+  --white: #fff;
+  --black: #000;
+}
+.pagination {
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #141615;
+  --bs-pagination-active-border-color: #141615;
+}
+.page-link {
+  color: #141615;
+  }
+
 body{
 	font-family: "Questrial", sans-serif;
   	font-weight: 400;
@@ -438,3 +452,17 @@ article iframe{
 
 }
 
+.wp-block-group > div{
+  width: 100%;
+}
+.hero_section{
+ height: 50vh ;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ h1{
+color: var(--white);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+}
+}

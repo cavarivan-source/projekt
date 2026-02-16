@@ -5,16 +5,14 @@
 
     import { useState,useEffect } from 'react';
     
-    import './Blog.css'
 import { data, useParams } from 'react-router-dom';
-import Author from '../components/Author';
    
     
-    const BlogSingle = () => {
+    const LigaSingle = () => {
    const{slug} = useParams();
    const [post,setPost] = useState(null);
    useEffect(() => {
-fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&_embed`)
+fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/klub?slug=${slug}&_embed`)
 .then(response => response.json ())
 .then((data) => setPost(data[0]))
 
@@ -24,7 +22,7 @@ fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&
     return <p>Učitavanje</p>
    }
   return (
-    <div className="blog-single">
+    <div className="liga-single">
         <div class="masthead" style={{
          backgroundImage: "url("+post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url+")"
         }}>
@@ -34,13 +32,16 @@ fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&
                         <div class="post-heading">
                             <h1>{post.title.rendered}</h1>
                           
-
+                            <span class="meta">
+       
+                                , {new Date(post.date).toLocaleDateString("hr-HR")}
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-<Author post={post} />
+
 
         <article class="mb-4">
             <div class="container px-4 px-lg-5">
@@ -55,4 +56,4 @@ fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&
   );
 };
 
-export default BlogSingle;
+export default LigaSingle;

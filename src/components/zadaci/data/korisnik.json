@@ -1,0 +1,23 @@
+[
+    {
+
+        "ime" : "Ivan",
+        "prezime" : "Ćavar",
+        "godine" : 41,
+        "vozacka" : true,
+        "vjestine": [
+              "HTML",
+        "CSS",
+        "JavaScript",
+        "React"
+        
+        ],
+      
+
+        "adresa" :{
+            "ulica" : "Utinjska 3g",
+            "grad" : "Zagreb",
+            "pbroj" : 10000
+        }
+    }
+]
