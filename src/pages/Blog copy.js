@@ -7,7 +7,7 @@ import "./Blog.css";
 import ScrollToTop from "../components/ScrollToTop";
 import BlogPost from "../components/BlogPost";
 import SwiperComponent from "../components/SwiperComponent";
-import AuthorPage from "./AuthorPage";
+
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
