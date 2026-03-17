@@ -1,0 +1,340 @@
+.clanstvo-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 124px 24px 56px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(160deg, rgba(4, 18, 9, 0.82), rgba(5, 28, 12, 0.78)),
+    url("../img/poletglavna.png") center/cover no-repeat;
+}
+
+.clanstvo-atmosphere {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.clanstvo-atmosphere-left {
+  top: -190px;
+  left: -130px;
+  background: #90f29d;
+}
+
+.clanstvo-atmosphere-right {
+  right: -160px;
+  bottom: -200px;
+  background: #ffd06a;
+}
+
+.clanstvo-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.clanstvo-hero,
+.clanstvo-panel {
+  background: rgba(7, 24, 12, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 26px;
+  color: #ffffff;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  animation: clanstvoFadeUp 320ms ease both;
+}
+
+.clanstvo-kicker {
+  margin: 0 0 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.clanstvo-hero h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4.4vw, 4.2rem);
+  line-height: 1.04;
+  color: #ffffff;
+}
+
+.clanstvo-hero > p {
+  margin: 14px 0 0;
+  max-width: 72ch;
+  font-size: 1.06rem;
+  line-height: 1.72;
+  color: #ffffff;
+}
+
+.clanstvo-hero-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.clanstvo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.clanstvo-btn:hover {
+  transform: translateY(-2px);
+}
+
+.clanstvo-btn-primary {
+  border: 1px solid rgba(144, 242, 157, 0.55);
+  background: #1f7f37;
+  color: #ffffff;
+  box-shadow: 0 12px 22px rgba(157, 245, 170, 0.34);
+}
+
+.clanstvo-btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.clanstvo-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #f4fff2;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.clanstvo-btn-whatsapp {
+  border: 1px solid rgba(144, 242, 157, 0.55);
+  color: #dfffe4;
+  background: rgba(50, 190, 95, 0.2);
+}
+
+.clanstvo-layout-two {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 22px;
+}
+
+.clanstvo-panel h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.7vw, 2.25rem);
+  color: #ffffff;
+}
+
+.clanstvo-panel h3 {
+  margin: 18px 0 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: #ffffff;
+}
+
+.clanstvo-panel p {
+  margin: 10px 0 0;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.clanstvo-list,
+.clanstvo-steps {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.clanstvo-list li,
+.clanstvo-steps li {
+  position: relative;
+  padding-left: 22px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.clanstvo-list li::before,
+.clanstvo-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9df5aa;
+  box-shadow: 0 0 0 4px rgba(157, 245, 170, 0.18);
+}
+
+.clanstvo-models {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.clanstvo-model-card {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.clanstvo-model-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.clanstvo-model-price {
+  margin: 6px 0 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.clanstvo-model-card ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.clanstvo-model-card li {
+  margin-top: 6px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.clanstvo-signup {
+  gap: 12px;
+}
+
+.clanstvo-form {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.clanstvo-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+.clanstvo-field-wide {
+  grid-column: span 2;
+}
+
+.clanstvo-form input,
+.clanstvo-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f4fff2;
+}
+
+.clanstvo-form input:focus,
+.clanstvo-form textarea:focus {
+  outline: none;
+  border-color: rgba(157, 245, 170, 0.85);
+  box-shadow: 0 0 0 2px rgba(157, 245, 170, 0.22);
+}
+
+.clanstvo-signup-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.clanstvo-signup-actions p {
+  margin: 0;
+}
+
+.clanstvo-status {
+  margin: 10px 0 0;
+  font-size: 0.92rem;
+}
+
+.clanstvo-status-success {
+  color: #ffffff;
+}
+
+.clanstvo-status-error {
+  color: #ffffff;
+}
+
+.clanstvo-panel details {
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.clanstvo-panel summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@keyframes clanstvoFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .clanstvo-page {
+    padding: 108px 18px 42px;
+  }
+
+  .clanstvo-layout-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .clanstvo-hero,
+  .clanstvo-panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .clanstvo-form {
+    grid-template-columns: 1fr;
+  }
+
+  .clanstvo-field-wide {
+    grid-column: span 1;
+  }
+
+  .clanstvo-btn {
+    width: 100%;
+  }
+
+  .clanstvo-signup-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

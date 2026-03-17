@@ -1,49 +1,32 @@
-import Korisnik from './data/korisnik.json';
-
 //funkcija za prikaz korisnika
 
 const Profil = () => {
-const KorisnikObjekt= {
-
-        "ime" : "Ivan", //string
-        "prezime" : "Ćavar", // string
-        "godine" : 41, //number
-        "vozacka" : true, //boolean
-        "vjestine": [      //array / niz    
-              "HTML",
+const korisnik = {
+        "ime" : "Ivan",
+        "prezime" : "Ćavar",
+        "godine" : 41,
+        "vozacka" : true,
+        "vjestine": [
+        "HTML",
         "CSS",
         "JavaScript",
         "React"
-        
         ],
-      
-
-        "adresa" :{                   //objekt
+        "adresa" :{
             "ulica" : "Utinjska 3g",
             "grad" : "Zagreb",
-            "pbroj" : 10000,
-            "drzava":{
-                "naziv" : "Hrvatska",
-                "oznaka" : "HR",
-                "valuta" : "EUR"
-            }
+            "pbroj" : 10000
         }
     }
-    //ovo je JSON format, tekstualni oblik, string
-
-const KorisnikJSON ={ "ime" : "Ivan", "prezime" : "Ćavar", "godine" : 41, "vozacka" : true, "vjestine": [ "HTML", "CSS", "JavaScript", "React" ], "adresa" :{ "ulica" : "Utinjska 3g", "grad" : "Zagreb", "pbroj" : 10000 } }
-//Pomoću JSON.parse() ga pretvaramo u Javascript objekt
-
-const Korisnik =JSON.parse(KorisnikJSON)
 
     //ova komponenta vraća informacije o korisniku
   return (
     <div className="container">
         <h1>Profil korisnika</h1>
 
-    <p> Ime: {Korisnik.ime} </p>
-        <p> Prezime: {Korisnik.prezime} </p>
-        <p> Godine: {Korisnik.godine} </p>
+    <p> Ime: {korisnik.ime} </p>
+        <p> Prezime: {korisnik.prezime} </p>
+        <p> Godine: {korisnik.godine} </p>
         <div>
             Vještine:
             <ul>
@@ -52,9 +35,9 @@ const Korisnik =JSON.parse(KorisnikJSON)
                 {
                 
                 //Map koristimo za prolazak kroz niz (i ispisivanje vrijednosti, u ovom slučaju)
-                Korisnik.vjestine.map (
+                korisnik.vjestine.map (
                     (vjestina,index) => (
-                        <li>{index+1}, {vjestina}</li>
+                        <li key={vjestina}>{index+1}, {vjestina}</li>
                     )
 
                 )
@@ -67,9 +50,9 @@ const Korisnik =JSON.parse(KorisnikJSON)
 
         </div>
 
-    <p> Ulica: {Korisnik.adresa.ulica}</p>
-        <p> Grad: {Korisnik.adresa.grad}</p>
-         <p> Poštanski broj: {Korisnik.adresa.pbroj}</p>
+    <p> Ulica: {korisnik.adresa.ulica}</p>
+        <p> Grad: {korisnik.adresa.grad}</p>
+         <p> Poštanski broj: {korisnik.adresa.pbroj}</p>
 
         </div>
   )

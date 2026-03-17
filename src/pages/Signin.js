@@ -4,11 +4,9 @@ import "./signin.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const SignIn = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const [form, setFrom] = useState({
     username: "",
     password: "",
@@ -28,10 +26,8 @@ const token =localStorage.getItem ("token");
       [e.target.name]: e.target.value,
     });
   };
-  console.log(form);
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
     try {
       const response = await fetch(
         "https://front2.edukacija.online/backend/wp-json/jwt-auth/v1/token",
@@ -45,8 +41,6 @@ const token =localStorage.getItem ("token");
 
 
       const data = await response.json();
-      setLoading(false);
-      console.log(data);
       if (data?.code) {
         setError("Wrong Email or password");
         return;
@@ -54,9 +48,9 @@ const token =localStorage.getItem ("token");
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.user_display_name);
       navigate("/", {replace: true});
+      window.location.reload();
 
     } catch (error) {
-      setLoading(false);
       setError("Something went wrong. Please try again.");
       console.error(error);
     }
@@ -86,13 +80,13 @@ const token =localStorage.getItem ("token");
               value={form.password}
               onChange={handleChange}
             />
-            <a href="#">Forgot password?</a>
+            <button type="button" className="btn btn-link p-0 text-start">Forgot password?</button>
             <button type="submit">Log in</button>
             <p>{error}</p>
           </form>
           <p className="text-center breakline">or</p>
           <p>
-            Don't have an account? <Link>Sign Up</Link>
+            Don't have an account? <Link to="/signup">Sign Up</Link>
           </p>
         </div>
       </div>

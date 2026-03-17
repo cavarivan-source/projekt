@@ -6,8 +6,8 @@ const HeroSection = ({ stranica, fallback, size="full" }) => {
     <>
       <div 
       className="container-fluid hero_section d-flex align-items-center justify-content-center"
-      style={{backgroundImage: `url(${selectedImg})`}}
       >
+        <img src={selectedImg} alt="" className="hero_section_bg" />
         <h1 className="text-center">
           {stranica?.acf?.naslov_ic || "Naslov nije dostupan"}
         </h1>

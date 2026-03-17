@@ -1,16 +1,108 @@
 .blog-post img{
-    aspect-ratio: 4/5;
-    object-fit: cover;
     width: 100%;
+    height: auto;
+    display: block;
 }
 .blog-post h2{
     font-size: 2rem;
+    color: #fff;
+}
+.blog-post, .blog-post a, .blog-post p, .blog-post span {
+    color: #fff;
+}
+.blog-post a {
+    text-decoration: none;
+}
+.blog-post a:hover {
+    color: #cce8d4;
 }
 .blog-page{
     min-height: calc(100vh - 53px);
+    position: relative;
+    background-image: var(--field-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-@media(min-width: 440px){
+
+.blog-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 10, 6, 0.78);
+    z-index: 0;
+}
+
+.blog-page .container {
+    position: relative;
+    z-index: 1;
+}
+
+.blog-page h1 {
+    color: #fff;
+}
+
+.blog-page .pagination {
+    margin-top: 1.75rem;
+    margin-bottom: 0;
+    border: 0;
+    box-shadow: none;
+    gap: 0.3rem;
+}
+
+.blog-page .page-link {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.blog-page .page-link:hover,
+.blog-page .page-link:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.28);
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.blog-page .page-item.active .page-link {
+    color: #fff;
+    background: rgba(19, 88, 34, 0.82);
+    border-color: rgba(126, 207, 145, 0.7);
+}
+
+.blog-page .page-item.disabled .page-link {
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .blog-page .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .blog-page h1 {
+        font-size: clamp(1.9rem, 8vw, 2.4rem);
+        line-height: 1.15;
+    }
+
+    .blog-post h2 {
+        font-size: 1.35rem;
+        line-height: 1.22;
+    }
+
+    .blog-post p,
+    .blog-post span,
+    .blog-post li {
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+
     .blog-post img {
-      aspect-ratio: 16/9;  
+        border-radius: 12px;
     }
 }

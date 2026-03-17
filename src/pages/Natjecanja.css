@@ -1,0 +1,197 @@
+.natjecanja-page {
+    min-height: calc(100vh - 53px);
+    position: relative;
+    background-image: var(--field-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.natjecanja-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 10, 6, 0.78);
+    z-index: 0;
+}
+
+.natjecanja-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+.natjecanja-page,
+.natjecanja-page p,
+.natjecanja-page h1,
+.natjecanja-page h2,
+.natjecanja-page h3,
+.natjecanja-page h4,
+.natjecanja-page h5,
+.natjecanja-page h6,
+.natjecanja-page li,
+.natjecanja-page td,
+.natjecanja-page th {
+    color: #f4fff2;
+}
+
+/* Expand WP/Bootstrap wrappers so content can use full page width */
+.natjecanja-page .container,
+.natjecanja-page .container-fluid,
+.natjecanja-page .wp-block-group,
+.natjecanja-page .wp-block-group__inner-container,
+.natjecanja-page .wp-block-columns,
+.natjecanja-page .wp-block-column {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.natjecanja-page .row {
+    justify-content: center;
+}
+
+/* First WP columns block contains the 3 competition logos */
+.natjecanja-page .wp-block-columns:first-of-type {
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 2vw, 32px);
+}
+
+.natjecanja-page .wp-block-columns:first-of-type .wp-block-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.natjecanja-page .wp-block-columns:first-of-type .wp-block-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.natjecanja-page .wp-block-columns:first-of-type .wp-block-image img {
+    width: min(100%, 320px) !important;
+    height: 220px !important;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.natjecanja-page .row img,
+.natjecanja-page .wp-block-image img,
+.natjecanja-page img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.natjecanja-page iframe[src*="widgets.sofascore.com"] {
+    display: block;
+    width: min(100%, 1100px) !important;
+    max-width: 1100px !important;
+    margin: 20px auto 0;
+}
+
+.natjecanja-page iframe[src*="widgets.sofascore.com"] + div {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center !important;
+}
+
+.natjecanja-page p,
+.natjecanja-page li {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.8;
+    max-width: 900px;
+}
+
+.natjecanja-page h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    margin-bottom: 1rem;
+}
+
+.natjecanja-page h2 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.natjecanja-page h3 {
+    font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+    margin-bottom: 0.5rem;
+}
+
+.natjecanja-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.natjecanja-page td,
+.natjecanja-page th {
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.natjecanja-page a[href="https://semafor.hns.family/"],
+.natjecanja-page a[href="https://semafor.hns.family"] {
+    color: #ffffff !important;
+}
+
+.natjecanja-page a[href="https://semafor.hns.family/"]:hover,
+.natjecanja-page a[href="https://semafor.hns.family"]:hover {
+    color: #ffffff !important;
+    text-decoration-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+    .natjecanja-page {
+        padding: 16px;
+    }
+
+    .natjecanja-page p,
+    .natjecanja-page li {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .natjecanja-page h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .natjecanja-page h2 {
+        font-size: clamp(1.55rem, 7vw, 2.1rem);
+    }
+
+    .natjecanja-page h3 {
+        font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    }
+
+    .natjecanja-page img,
+    .natjecanja-page video,
+    .natjecanja-page iframe {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .natjecanja-page .wp-block-columns:first-of-type .wp-block-image img {
+        width: min(100%, 220px) !important;
+        height: 150px !important;
+    }
+
+    .natjecanja-page table {
+        font-size: 0.95rem;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .natjecanja-page td,
+    .natjecanja-page th {
+        padding: 8px 10px;
+    }
+}

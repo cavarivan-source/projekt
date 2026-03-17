@@ -1,43 +1,41 @@
-import { useState, useEffect } from "react"
-import WOW from "wowjs"
-import FeaturedImg from "../components/zadaci/FeaturedImg";
-import HeroSection from "../components/HeroSection";
+import { useState, useEffect } from "react";
+import "./Home.css";
+import { buildFallbackMarkup, enhanceHomeMarkup } from "./homeUtils";
+
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 const Home = () => {
+  const [homeHtml, setHomeHtml] = useState("<p>Ucitavanje sadrzaja...</p>");
 
-const[page, setPage] = useState(null);   // stanje, početno stanje null i takvo je dok ne dodijeli novu vrijednost tom stanju
+  useEffect(() => {
+    const fetchPage = async () => {
+      try {
+        const response = await fetch(`${BASE_URL}v2/pages/176?_embed`);
 
-useEffect(() => {                   // kad se komponenta učita onda radi useEffect
-const fetchPage = async () => {         // arrow funkcija, dohvati
-  try{                           // Try i catch koristimo kad pokušavamo dohvatiti greške, da nemamo error greške (hvatamo je s catch)
-    const response = await fetch (`https://front2.edukacija.online/backend/wp-json/wp/v2/pages/176?_embed`)
-if(!response.ok){
-  throw new Error ("Ne mogu povući podatke")
-}
-    const data = await response.json();
-    setPage(data);
-  } catch(err) {
-console.log(err.message);
-  }
-}
+        if (!response.ok) {
+          throw new Error("Ne mogu povuci podatke");
+        }
 
-fetchPage();       // s ovime pozivamo funkciju da je ispiše, paziti da to bude nakon funkcije
+        const data = await response.json();
+        const rendered = data?.content?.rendered || "";
+        const featuredMedia = data?._embedded?.["wp:featuredmedia"]?.[0];
+        setHomeHtml(enhanceHomeMarkup(rendered, featuredMedia));
+      } catch (err) {
+        console.log(err.message);
+        setHomeHtml(buildFallbackMarkup(null, "Greska pri ucitavanju sadrzaja."));
+      }
+    };
 
-new WOW.WOW().init();
-}, [] );
+    fetchPage();
+  }, []);
 
-
-  
-  if(!page) return <p>Učitavanje...</p>
   return (
-    <>
-    <HeroSection stranica={page} fallback="https://placehold.co/600x400" size="full"/>
+    <div className="home-page">
+      <div className="home-overlay" />
 
+      <div className="home-wp-content" dangerouslySetInnerHTML={{ __html: homeHtml }} />
+    </div>
+  );
+};
 
-    {/* <FeaturedImg page={page} fallback="https://placehold.co/600x400" size="thumbnail"/> */}
-  <div dangerouslySetInnerHTML={{ __html: page.content.rendered }}></div>    
-  </>
-  )
-}
-
-export default Home
+export default Home;

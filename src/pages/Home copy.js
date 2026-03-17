@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 
 const[page, setPage] = useState(null);
@@ -7,7 +8,7 @@ const[page, setPage] = useState(null);
 useEffect(() => {
 const fetchPage = async () => {
   try{
-    const response = await fetch (`https://front2.edukacija.online/backend/wp-json/wp/v2/pages/176`)
+    const response = await fetch (`${BASE_URL}v2/pages/176`)
 if(!response.ok){
   throw new Error ("Ne mogu povući podatke")
 }
